@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>References — Green Analytics</title>
+<meta name="description" content="Every claim in the Green Analytics methodology traces to a published industry standard, peer-reviewed study, or recognized framework. 30 years of documentation." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#f7f5f0;--bg-sage:#eef5f0;--bg-white:#ffffff;
+  --green:#2d7a4f;--green-dark:#1e5a38;--green-mid:#3a9162;
+  --green-light:#d4ece0;--green-dim:rgba(45,122,79,0.12);
+  --amber:#e8a020;--amber-light:#f5c05a;--amber-dim:rgba(232,160,32,0.15);
+  --text:#1a2e1f;--text-mid:#3d5a47;--text-muted:#7a9e87;
+  --white:#ffffff;--r:14px;--shadow:0 8px 40px rgba(45,122,79,0.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 48px;background:rgba(247,245,240,0.95);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(45,122,79,0.1);
+}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--green)}
+.nav-logo em{color:var(--text);font-style:italic}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);transition:color 0.2s}
+.nav-links a:hover{color:var(--green)}
+.nav-links a.active{color:var(--green)}
+.nav-cta{background:var(--green);color:var(--bg)!important;padding:9px 22px;border-radius:6px;font-weight:700!important}
+@media(max-width:700px){nav{padding:16px 20px}.nav-links a:not(.nav-cta){display:none}}
+
+.page-header{
+  padding:140px 48px 80px;background:var(--bg-sage);
+  border-bottom:1px solid rgba(45,122,79,0.1);position:relative;overflow:hidden;
+}
+.page-header::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 50% 80% at 80% 50%, rgba(47,99,71,0.15) 0%, transparent 70%);
+  pointer-events:none;
+}
+.page-header-inner{max-width:700px;position:relative;z-index:1}
+.page-eyebrow{font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--green);margin-bottom:12px}
+.page-header h1{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.12;color:var(--text);margin-bottom:20px}
+.page-header h1 em{color:var(--green);font-style:italic}
+.page-header p{font-size:1rem;color:var(--text-mid);max-width:560px;line-height:1.75}
+@media(max-width:700px){.page-header{padding:110px 20px 56px}}
+
+.refs-wrap{max-width:1000px;margin:0 auto;padding:80px 48px}
+@media(max-width:700px){.refs-wrap{padding:56px 20px}}
+
+.refs-intro{
+  background:var(--bg-sage);border:1px solid rgba(45,122,79,0.12);border-radius:var(--r);
+  padding:28px 32px;margin-bottom:56px;font-size:0.88rem;color:var(--text-mid);line-height:1.75;
+}
+.refs-intro strong{color:var(--green-mid)}
+
+.ref-group{margin-bottom:56px}
+.ref-group-title{
+  font-family:'DM Serif Display',serif;
+  font-size:1.3rem;color:var(--text);
+  margin-bottom:4px;
+}
+.ref-group-sub{font-size:0.78rem;color:var(--text-muted);font-weight:600;letter-spacing:0.06em;margin-bottom:24px}
+.ref-list{display:flex;flex-direction:column;gap:14px}
+.ref-item{
+  display:grid;grid-template-columns:auto 1fr;gap:16px;
+  background:var(--bg-sage);border:1px solid rgba(45,122,79,0.12);
+  border-radius:10px;padding:18px 20px;
+  transition:border-color 0.2s;
+}
+.ref-item:hover{border-color:rgba(201,168,76,0.4)}
+.ref-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--green);
+  opacity:0.6;margin-top:7px;flex-shrink:0;
+}
+.ref-content{}
+.ref-title{font-size:0.88rem;color:var(--text);font-weight:600;margin-bottom:4px;line-height:1.4}
+.ref-meta{font-size:0.76rem;color:var(--text-muted);margin-bottom:6px}
+.ref-url{
+  font-size:0.74rem;color:var(--green);
+  word-break:break-all;line-height:1.4;
+  transition:color 0.2s;
+}
+.ref-url:hover{color:var(--green-mid)}
+
+.divider{border:none;border-top:1px solid rgba(45,122,79,0.12);margin:56px 0}
+
+.stat-note{
+  font-size:0.8rem;color:var(--text-muted);
+  border-left:3px solid rgba(45,122,79,0.12);
+  padding-left:16px;margin-top:8px;line-height:1.65;
+}
+
+footer{
+  background:var(--bg);border-top:1px solid rgba(45,122,79,0.12);
+  padding:40px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+}
+.footer-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--green)}
+.footer-logo em{color:var(--text);font-style:italic}
+.footer-links{display:flex;gap:28px}
+.footer-links a{font-size:0.78rem;color:var(--text-muted);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s}
+.footer-links a:hover{color:var(--green)}
+.footer-legal{font-size:0.72rem;color:var(--text-muted);width:100%}
+@media(max-width:700px){footer{padding:32px 20px}}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity 0.5s ease,transform 0.5s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Green<em>Analytics</em></a>
+  <div class="nav-links">
+    <a href="index.html#how">How It Works</a>
+    <a href="about.html">About</a>
+    <a href="references.html" class="active">References</a>
+    <a href="index.html#offer" class="nav-cta">Book a Call</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-eyebrow">Source Documentation</div>
+    <h1>30 Years of<br /><em>Industry Evidence.</em></h1>
+    <p>Every claim in the Green Analytics methodology traces to a published standard, peer-reviewed study, or industry body report. This page is the documentation trail.</p>
+  </div>
+</div>
+
+<div class="refs-wrap">
+
+  <div class="refs-intro reveal">
+    <strong>Why this page exists:</strong> The events industry has produced 30+ years of sustainability guidance that is rarely cited together and even more rarely applied consistently. GA methodology is not proprietary science — it is the industry's own frameworks, applied with explicit boundaries and traceable attribution. This reference list is the foundation of that claim.
+  </div>
+
+  <!-- GOVERNING STANDARDS -->
+  <div class="ref-group reveal">
+    <div class="ref-group-title">Governing Standards & Frameworks</div>
+    <div class="ref-group-sub">The three primary frameworks that define GA's measurement architecture</div>
+    <div class="ref-list">
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">Net Zero Carbon Events (NZCE) Roadmap</div>
+          <div class="ref-meta">UNFCCC / Events Industry Coalition · 2022</div>
+          <div class="ref-meta">Defines the five stakeholder tiers, 90% reduction target, and offset bridge methodology that underpins GA's three-tier architecture.</div>
+          <a class="ref-url" href="https://www.netzerocarbonevents.org/" target="_blank">netzerocarbonevents.org</a>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">NZCE Measurement Methodology</div>
+          <div class="ref-meta">Net Zero Carbon Events · 2023</div>
+          <div class="ref-meta">The operational companion to the Roadmap — defines calculation approach, segment boundaries, and the documentation-first evidence standard.</div>
+          <a class="ref-url" href="https://www.netzerocarbonevents.org/" target="_blank">netzerocarbonevents.org</a>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">EIC Sustainable Event Standards</div>
+          <div class="ref-meta">Events Industry Council · 2023</div>
+          <div class="ref-meta">Defines the contracted footprint boundary used in GA's Tier 1 space assessments. GA replaces ISO 20121's self-scoped model with EIC criteria.</div>
+          <a class="ref-url" href="https://insights.eventscouncil.org/Sustainability/Sustainability-Standards-and-Registry" target="_blank">insights.eventscouncil.org</a>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">GHG Protocol — Scope 3 Standard (Category 6: Business Travel)</div>
+          <div class="ref-meta">World Resources Institute / WBCSD · 2011, updated</div>
+          <div class="ref-meta">The basis for GA's Tier 2 attendee carbon footprint attribution — business travel emissions belong to the employer, not the event organizer.</div>
+          <a class="ref-url" href="https://ghgprotocol.org/scope-3-standard" target="_blank">ghgprotocol.org/scope-3-standard</a>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">ISO 20121 — Sustainable Events Management System</div>
+          <div class="ref-meta">International Organization for Standardization · 2012, updated 2024</div>
+          <div class="ref-meta">GA methodology is built in the ISO 20121 ecosystem but explicitly replaces the self-determination scope model with EIC criteria to close the measurement gap.</div>
+          <a class="ref-url" href="https://www.iso.org/iso-20121-sustainable-events.html" target="_blank">iso.org/iso-20121-sustainable-events.html</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- INDUSTRY RESEARCH -->
+  <div class="ref-group reveal">
+    <div class="ref-group-title">Industry Research & Economic Data</div>
+    <div class="ref-group-sub">Published reports informing GA's industry context and market positioning</div>
+    <div class="ref-list">
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">EIC Global Significance of Business Events</div>
+          <div class="ref-meta">Events Industry Council / Oxford Economics · 2018</div>
+          <div class="ref-meta">Primary source for industry economic scale data. 1.87 million business events documented in the US in 2016.</div>
+          <a class="ref-url" href="https://insights.eventscouncil.org/" target="_blank">insights.eventscouncil.org</a>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">Finding the Future Together: Towards a More Sustainable B2B Trade Show Industry</div>
+          <div class="ref-meta">SISO / UFI · September 2022</div>
+          <div class="ref-meta">Documents industry sustainability barriers: financial (18 references), cultural (15), operational (11). Confirms structural absence of measurement infrastructure.</div>
+          <a class="ref-url" href="https://www.siso.org/finding-future-together" target="_blank">siso.org/finding-future-together</a>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">NZCE Reporting Results — Full Report</div>
+          <div class="ref-meta">Net Zero Carbon Events · 2025</div>
+          <div class="ref-meta">Documents the 30+ inconsistent calculators and measurement approaches across the global events industry — the core indictment of the pre-GA measurement landscape.</div>
+          <a class="ref-url" href="https://www.netzerocarbonevents.org/" target="_blank">netzerocarbonevents.org</a>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">ESCA Sustainability Guidance (Parts 1 & 2)</div>
+          <div class="ref-meta">Exhibit Services & Contractors Association · 2024</div>
+          <div class="ref-meta">Trade show supplier sustainability framework — informs GA's Tier 3 exhibitor assessment and supplier intelligence program architecture.</div>
+          <a class="ref-url" href="https://www.esca.org/resources/sustainability/" target="_blank">esca.org/resources/sustainability</a>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">Year of the Sustainable RFP</div>
+          <div class="ref-meta">Smart Meetings · 2023</div>
+          <div class="ref-meta">Documents the shift in corporate buyer expectations — sustainability criteria moving from optional to required in event procurement.</div>
+          <a class="ref-url" href="https://www.smartmeetings.com" target="_blank">smartmeetings.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- EMISSION FACTORS & METHODOLOGY -->
+  <div class="ref-group reveal">
+    <div class="ref-group-title">Emission Factors & Calculation Methodology</div>
+    <div class="ref-group-sub">Science-based sources for GA's emissions conversion factors</div>
+    <div class="ref-list">
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">DEFRA / UK BEIS Greenhouse Gas Conversion Factors</div>
+          <div class="ref-meta">UK Department for Energy Security & Net Zero · Annual</div>
+          <div class="ref-meta">Primary emission factor source for transportation and energy calculations. Used in GA's Tier 2 attendee carbon footprint scoring.</div>
+          <a class="ref-url" href="https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting" target="_blank">gov.uk — Conversion Factors for Company Reporting</a>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">EPA Emission Factors Hub</div>
+          <div class="ref-meta">US Environmental Protection Agency · Updated annually</div>
+          <div class="ref-meta">US-specific emission factors for stationary combustion, mobile sources, and electricity generation by grid region.</div>
+          <a class="ref-url" href="https://www.epa.gov/climateleadership/ghg-emission-factors-hub" target="_blank">epa.gov/climateleadership/ghg-emission-factors-hub</a>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">ICAO Carbon Emissions Calculator</div>
+          <div class="ref-meta">International Civil Aviation Organization</div>
+          <div class="ref-meta">Aviation emission factors used in GA's Tier 2 flight segment calculations, including cabin class radiative forcing adjustments.</div>
+          <a class="ref-url" href="https://www.icao.int/environmental-protection/Carbonoffset/Pages/default.aspx" target="_blank">icao.int — Carbon Offset Calculator</a>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">Reducing Food's Environmental Impacts Through Producers and Consumers</div>
+          <div class="ref-meta">Poore & Nemecek · Science, 2018</div>
+          <div class="ref-meta">Peer-reviewed lifecycle analysis of food emissions by protein and production method. Foundation for GA's Food & Beverage segment scoring.</div>
+          <a class="ref-url" href="https://doi.org/10.1126/science.aaq0216" target="_blank">doi.org/10.1126/science.aaq0216</a>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">Cornell Hotel Sustainability Benchmarking Index (CHSB)</div>
+          <div class="ref-meta">Cornell University Center for Hospitality Research · Annual</div>
+          <div class="ref-meta">Industry-standard hotel sustainability benchmarking used in GA's Tier 2 Housing segment assessment. Provides peer-comparable energy and water performance data.</div>
+          <a class="ref-url" href="https://greenview.sg/chsb-index/" target="_blank">greenview.sg/chsb-index</a>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">EPA Energy Star Program — Appliance Energy Consumption</div>
+          <div class="ref-meta">US Environmental Protection Agency</div>
+          <div class="ref-meta">Reference for device wattage standards used in GA's Tier 2 Energy Consumption segment — laptops, phones, tablets, and other personal electronics.</div>
+          <a class="ref-url" href="https://www.energy.gov/energysaver/estimating-appliance-and-home-electronic-energy-use" target="_blank">energy.gov — Estimating Appliance Energy Use</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- VENUE & CERTIFICATION -->
+  <div class="ref-group reveal">
+    <div class="ref-group-title">Venue Standards & Certification Programs</div>
+    <div class="ref-group-sub">Building and venue performance frameworks referenced in GA's Tier 1 assessments</div>
+    <div class="ref-list">
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">LEED v4 / v5 — Leadership in Energy and Environmental Design</div>
+          <div class="ref-meta">US Green Building Council · Current: v4.1</div>
+          <div class="ref-meta">Venue certification standard. LEED-certified properties provide verifiable energy and water performance data that feeds directly into Tier 1 space assessments.</div>
+          <a class="ref-url" href="https://www.usgbc.org/leed/v5" target="_blank">usgbc.org/leed/v5</a>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">Las Vegas & the Net Zero Carbon Events Roadmap</div>
+          <div class="ref-meta">Green Analytics / NZCE · 2024</div>
+          <div class="ref-meta">Original GA research documenting Las Vegas as a global proof point for NZCE-aligned event infrastructure — permanent venues, renewable energy commitments, circular production ecosystems.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- CORPORATE DISCLOSURE -->
+  <div class="ref-group reveal">
+    <div class="ref-group-title">Corporate Disclosure Frameworks</div>
+    <div class="ref-group-sub">Standards that GA reports are structured to support</div>
+    <div class="ref-list">
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">CDP Climate Disclosure</div>
+          <div class="ref-meta">Carbon Disclosure Project</div>
+          <a class="ref-url" href="https://www.cdp.net/en" target="_blank">cdp.net/en</a>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">Global Reporting Initiative (GRI) Standards</div>
+          <div class="ref-meta">GRI</div>
+          <a class="ref-url" href="https://www.globalreporting.org/" target="_blank">globalreporting.org</a>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">Corporate Sustainability Reporting Directive (CSRD)</div>
+          <div class="ref-meta">European Union · Effective 2024</div>
+          <div class="ref-meta">EU mandatory sustainability reporting framework affecting large companies operating in Europe, including US-headquartered multinationals with EU operations.</div>
+          <a class="ref-url" href="https://finance.ec.europa.eu/capital-markets-union-and-financial-markets/company-reporting-and-auditing/company-reporting/corporate-sustainability-reporting_en" target="_blank">European Commission — CSRD</a>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-dot"></div>
+        <div class="ref-content">
+          <div class="ref-title">Science Based Targets Initiative (SBTi)</div>
+          <div class="ref-meta">SBTi</div>
+          <a class="ref-url" href="https://sciencebasedtargets.org/net-zero" target="_blank">sciencebasedtargets.org/net-zero</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /refs-wrap -->
+
+<footer>
+  <div class="footer-logo">Green<em>Analytics</em></div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="index.html#offer">Contact</a>
+  </div>
+  <p class="footer-legal">© 2025 Green Analytics · Las Vegas, NV · Built on EIC Sustainable Event Standards, NZCE Roadmap, and GHG Protocol Scope 3.6</p>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, {threshold: 0.08});
+reveals.forEach(r => obs.observe(r));
+</script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thank You — Green Analytics</title>
+<meta name="description" content="Thank you for your interest in Green Analytics. We'll be in touch within one business day." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#f7f5f0;--bg-sage:#eef5f0;--bg-white:#ffffff;
+  --green:#2d7a4f;--green-dark:#1e5a38;--green-mid:#3a9162;
+  --green-light:#d4ece0;--green-dim:rgba(45,122,79,0.12);
+  --amber:#e8a020;--amber-light:#f5c05a;--amber-dim:rgba(232,160,32,0.15);
+  --text:#1a2e1f;--text-mid:#3d5a47;--text-muted:#7a9e87;
+  --white:#ffffff;--r:14px;--shadow:0 8px 40px rgba(45,122,79,0.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);
+  color:var(--text);line-height:1.65;
+  min-height:100vh;display:flex;flex-direction:column;
+}
+a{color:inherit;text-decoration:none}
+
+nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 48px;background:rgba(247,245,240,0.95);
+  border-bottom:1px solid rgba(45,122,79,0.1);flex-shrink:0;
+}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--green)}
+.nav-logo em{color:var(--text);font-style:italic}
+@media(max-width:700px){nav{padding:16px 20px}}
+
+.main{flex:1;display:flex;align-items:center;justify-content:center;padding:48px 20px;position:relative;overflow:hidden}
+.main::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 60% at 50% 40%, rgba(47,99,71,0.2) 0%, transparent 70%),
+    radial-gradient(ellipse 30% 40% at 20% 80%, rgba(201,168,76,0.06) 0%, transparent 60%);
+  pointer-events:none;
+}
+.main-grid-bg{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+  background-size:48px 48px;pointer-events:none;
+}
+.thank-you-card{
+  max-width:680px;width:100%;
+  position:relative;z-index:1;
+  text-align:center;
+}
+.check-ring{
+  width:80px;height:80px;border-radius:50%;
+  border:2px solid var(--green);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 32px;
+  background:rgba(201,168,76,0.08);
+  animation:popIn 0.5s 0.1s both;
+}
+.check-ring svg{width:36px;height:36px;stroke:var(--green);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+@keyframes popIn{from{transform:scale(0.7);opacity:0}to{transform:scale(1);opacity:1}}
+
+.eyebrow{
+  font-size:0.72rem;font-weight:700;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--green);
+  margin-bottom:16px;
+  animation:fadeUp 0.5s 0.2s both;
+}
+h1{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(2rem,5vw,3.2rem);
+  color:var(--text);line-height:1.12;
+  margin-bottom:20px;
+  animation:fadeUp 0.5s 0.3s both;
+}
+h1 em{color:var(--green);font-style:italic}
+.sub{
+  font-size:1rem;color:var(--text-mid);
+  max-width:480px;margin:0 auto 40px;line-height:1.7;
+  animation:fadeUp 0.5s 0.4s both;
+}
+
+.next-steps{
+  background:var(--bg-sage);border:1px solid rgba(45,122,79,0.12);border-radius:var(--r);
+  padding:32px;text-align:left;margin-bottom:32px;
+  animation:fadeUp 0.5s 0.5s both;
+}
+.next-steps h3{
+  font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text);
+  margin-bottom:20px;text-align:center;
+}
+.next-list{display:flex;flex-direction:column;gap:16px}
+.next-item{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
+.next-num{
+  font-family:'DM Serif Display',serif;font-size:1.3rem;
+  color:var(--green);opacity:0.6;line-height:1;padding-top:2px;
+  width:28px;flex-shrink:0;
+}
+.next-item h4{font-size:0.85rem;color:var(--text);font-weight:600;margin-bottom:3px}
+.next-item p{font-size:0.78rem;color:var(--text-muted);line-height:1.6}
+
+.actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.5s 0.6s both}
+.btn-primary{
+  background:var(--green);color:var(--bg);
+  padding:13px 30px;border-radius:8px;font-weight:700;font-size:0.88rem;
+  letter-spacing:0.06em;font-family:'Plus Jakarta Sans',sans-serif;border:none;cursor:pointer;
+  transition:background 0.2s,transform 0.15s;display:inline-block;
+}
+.btn-primary:hover{background:var(--green-mid);transform:translateY(-2px)}
+.btn-secondary{
+  background:transparent;color:var(--text);
+  padding:13px 30px;border-radius:8px;font-weight:600;font-size:0.88rem;
+  letter-spacing:0.06em;font-family:'Plus Jakarta Sans',sans-serif;
+  border:1px solid rgba(244,239,228,0.2);cursor:pointer;
+  transition:border-color 0.2s,transform 0.15s;display:inline-block;
+}
+.btn-secondary:hover{border-color:var(--text);transform:translateY(-2px)}
+
+.contact-line{
+  font-size:0.76rem;color:var(--text-muted);margin-top:24px;
+  animation:fadeUp 0.5s 0.7s both;
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+footer{
+  background:var(--bg);border-top:1px solid rgba(45,122,79,0.12);
+  padding:28px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;flex-shrink:0;
+}
+.footer-logo{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--green)}
+.footer-logo em{color:var(--text);font-style:italic}
+.footer-legal{font-size:0.7rem;color:var(--text-muted)}
+@media(max-width:700px){footer{padding:24px 20px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Green<em>Analytics</em></a>
+</nav>
+
+<main class="main">
+  <div class="main-grid-bg"></div>
+  <div class="thank-you-card">
+
+    <div class="check-ring">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    </div>
+
+    <div class="eyebrow">Call Confirmed</div>
+    <h1>You&rsquo;re Booked.<br /><em>Here&rsquo;s How to Prepare.</em></h1>
+    <p class="sub">Your free 30-minute assessment call is confirmed. Two things are on their way to your inbox right now &mdash; read both before the call and you&rsquo;ll get significantly more out of the session.</p>
+
+    <div class="next-steps">
+      <h3>Your Three Free Gifts &amp; What Happens Next</h3>
+      <div class="next-list">
+
+        <div class="next-item">
+          <div class="next-num">1</div>
+          <div>
+            <h4>Gift One &mdash; The Ebook <span style="font-size:0.72rem;font-weight:600;color:var(--green);margin-left:6px">&mdash; Arriving in your inbox now</span></h4>
+            <p>&ldquo;How to Host Zero Emission Business Events and Get Paid for It.&rdquo; The full Green Analytics framework in one read &mdash; why the current model is broken, how the three-tier assessment works, and how the funding model pays planners to run it. Read this before your call.</p>
+          </div>
+        </div>
+
+        <div class="next-item">
+          <div class="next-num">2</div>
+          <div>
+            <h4>Gift Two &mdash; EIC Space Inventory Tool <span style="font-size:0.72rem;font-weight:600;color:var(--green);margin-left:6px">&mdash; Arriving in your inbox now</span></h4>
+            <p>A guided worksheet to identify every EIC-compliant contracted space in your annual event portfolio. Complete it and email it back to us before your call. Your full annual calendar is what allows us to show you how the funding mechanism works across your entire program &mdash; which events generate enough attendee and exhibitor participation to offset assessment costs on others, and where your portfolio qualifies for volume discounts that can bring assessments down to no additional cost to your events budget.</p>
+          </div>
+        </div>
+
+        <div class="next-item">
+          <div class="next-num">3</div>
+          <div>
+            <h4>Your Free 30-Minute Assessment Call &mdash; A Financial Session, Not an Environmental One</h4>
+            <p>This call has one job: show you how the numbers work across your actual portfolio. A small leadership summit with two contracted spaces might cost a few hundred dollars to assess. An annual conference with 5,000 attendees generates enough assessment revenue from registration fees and exhibitor participation to fund assessments across your entire event calendar &mdash; at no additional cost to your budget. We run the model together using your inventory, so you leave with a clear, specific picture of what this looks like for your program &mdash; not a theory, an actual number. No environmental pressure. No commitment. Just clarity.</p>
+          </div>
+        </div>
+
+        <div class="next-item">
+          <div class="next-num">4</div>
+          <div>
+            <h4>Submit Your Documentation</h4>
+            <p>After the call, you&rsquo;ll receive a simple intake checklist for your first space. Submit the vendor documents you already hold &mdash; production invoices, electrical orders, freight records. That&rsquo;s it.</p>
+          </div>
+        </div>
+
+        <div class="next-item">
+          <div class="next-num">5</div>
+          <div>
+            <h4>Gift Three &mdash; Your Free Pilot Assessment Report</h4>
+            <p>Following your call and document submission, Green Analytics will produce a complete Tier 1 assessment for one EIC-compliant space at no charge. A real report, built on your actual documentation &mdash; so you can see exactly what your clients will receive before committing to anything.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="actions">
+      <a href="about.html" class="btn-primary">Learn the Framework</a>
+      <a href="index.html" class="btn-secondary">Back to Green Analytics</a>
+    </div>
+
+    <p class="contact-line">Questions? Email reporting[at]greenanalytics.org or call 702-773-6350</p>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-logo">Green<em>Analytics</em></div>
+</footer>
+</body>
+</html>

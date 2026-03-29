@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Green Analytics</title>
+<meta name="description" content="Green Analytics was founded in Las Vegas by Ryan Green after 15+ years managing sustainability programs at the world's leading business event venues." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#f7f5f0;--bg-sage:#eef5f0;--bg-white:#ffffff;
+  --green:#2d7a4f;--green-dark:#1e5a38;--green-mid:#3a9162;
+  --green-light:#d4ece0;--green-dim:rgba(45,122,79,0.12);
+  --amber:#e8a020;--amber-light:#f5c05a;--amber-dim:rgba(232,160,32,0.15);
+  --text:#1a2e1f;--text-mid:#3d5a47;--text-muted:#7a9e87;
+  --white:#ffffff;--r:14px;--shadow:0 8px 40px rgba(45,122,79,0.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 48px;
+  background:rgba(247,245,240,0.95);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(45,122,79,0.1);
+}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--green)}
+.nav-logo em{color:var(--text);font-style:italic}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);transition:color 0.2s}
+.nav-links a:hover{color:var(--green)}
+.nav-links a.active{color:var(--green)}
+.nav-cta{background:var(--green);color:var(--bg)!important;padding:9px 22px;border-radius:6px;font-weight:700!important}
+@media(max-width:700px){nav{padding:16px 20px}.nav-links a:not(.nav-cta){display:none}}
+
+.page-header{
+  padding:140px 48px 80px;
+  background:var(--bg-sage);
+  border-bottom:1px solid rgba(45,122,79,0.1);
+  position:relative;overflow:hidden;
+}
+.page-header::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 50% 80% at 80% 50%, rgba(47,99,71,0.2) 0%, transparent 70%);
+  pointer-events:none;
+}
+.page-header-inner{max-width:700px;position:relative;z-index:1}
+.page-eyebrow{font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--green);margin-bottom:12px}
+.page-header h1{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.12;color:var(--text);margin-bottom:20px}
+.page-header h1 em{color:var(--green);font-style:italic}
+.page-header p{font-size:1rem;color:var(--text-mid);max-width:560px;line-height:1.75}
+@media(max-width:700px){.page-header{padding:110px 20px 56px}}
+
+section{padding:80px 48px}
+@media(max-width:700px){section{padding:56px 20px}}
+.section-label{font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--green);margin-bottom:12px}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.18;color:var(--text);margin-bottom:16px}
+.section-title em{color:var(--green);font-style:italic}
+
+/* FOUNDER */
+.founder{background:var(--bg-sage)}
+.founder-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start}
+@media(max-width:800px){.founder-inner{grid-template-columns:1fr}}
+.founder-aside{position:sticky;top:120px}
+.founder-badge{
+  background:var(--bg);border:1px solid rgba(45,122,79,0.12);
+  border-radius:var(--r);padding:32px;
+}
+.founder-name{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--text);margin-bottom:4px}
+.founder-title{font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--green);margin-bottom:20px}
+.founder-creds{display:flex;flex-direction:column;gap:10px;margin-top:20px;padding-top:20px;border-top:1px solid rgba(45,122,79,0.12)}
+.cred{display:flex;align-items:center;gap:10px;font-size:0.8rem;color:var(--text-muted)}
+.cred::before{content:'';flex-shrink:0;width:6px;height:6px;border-radius:50%;background:var(--green);opacity:0.7}
+.founder-body p{font-size:0.92rem;color:var(--text-mid);line-height:1.8;margin-bottom:18px}
+.founder-body strong{color:var(--text)}
+
+/* MISSION */
+.mission{background:var(--bg)}
+.mission-inner{max-width:900px;margin:0 auto}
+.mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+@media(max-width:700px){.mission-grid{grid-template-columns:1fr}}
+.mission-card{
+  background:var(--bg-sage);border:1px solid rgba(45,122,79,0.12);
+  border-radius:var(--r);padding:28px;
+}
+.mission-card h4{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--text);margin-bottom:10px}
+.mission-card p{font-size:0.83rem;color:var(--text-mid);line-height:1.7}
+
+/* FRAMEWORKS */
+.frameworks{background:var(--bg-sage)}
+.frameworks-inner{max-width:1000px;margin:0 auto}
+.frameworks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;max-width:900px}
+@media(max-width:800px){.frameworks-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.frameworks-grid{grid-template-columns:1fr}}
+.framework-pill{
+  background:var(--bg);border:1px solid rgba(45,122,79,0.12);
+  border-radius:var(--r);padding:20px 22px;
+}
+.framework-pill strong{display:block;font-size:0.85rem;color:var(--green);margin-bottom:6px;font-weight:700}
+.framework-pill p{font-size:0.78rem;color:var(--text-muted);line-height:1.6}
+
+/* FORMATIVE */
+.formative{background:var(--bg)}
+.formative-inner{max-width:800px;margin:0 auto;text-align:center}
+.quote-block{
+  background:var(--bg-sage);border:1px solid rgba(45,122,79,0.12);border-radius:var(--r);
+  padding:40px;margin:40px 0;text-align:left;
+  border-left:3px solid var(--green);
+}
+.quote-block p{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--text);line-height:1.65;font-style:italic;margin-bottom:16px}
+.quote-block cite{font-size:0.75rem;color:var(--text-muted);font-style:normal;font-weight:600;letter-spacing:0.08em;text-transform:uppercase}
+
+.btn-primary{
+  background:var(--green);color:var(--bg);
+  padding:15px 36px;border-radius:8px;
+  font-weight:700;font-size:0.9rem;letter-spacing:0.06em;
+  font-family:'Plus Jakarta Sans',sans-serif;border:none;cursor:pointer;
+  transition:background 0.2s,box-shadow 0.2s,transform 0.15s;
+  box-shadow:0 4px 20px rgba(201,168,76,0.25);display:inline-block;
+}
+.btn-primary:hover{background:var(--green-mid);transform:translateY(-2px)}
+
+footer{
+  background:var(--bg);border-top:1px solid rgba(45,122,79,0.12);
+  padding:40px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+}
+.footer-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--green)}
+.footer-logo em{color:var(--text);font-style:italic}
+.footer-links{display:flex;gap:28px}
+.footer-links a{font-size:0.78rem;color:var(--text-muted);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s}
+.footer-links a:hover{color:var(--green)}
+.footer-legal{font-size:0.72rem;color:var(--text-muted);width:100%}
+@media(max-width:700px){footer{padding:32px 20px}}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity 0.5s ease,transform 0.5s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Green<em>Analytics</em></a>
+  <div class="nav-links">
+    <a href="index.html#how">How It Works</a>
+    <a href="about.html" class="active">About</a>
+    <a href="references.html">References</a>
+    <a href="index.html#offer" class="nav-cta">Book a Call</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-eyebrow">About Green Analytics</div>
+    <h1>Built From the<br /><em>Inside Out.</em></h1>
+    <p>Green Analytics was founded in Las Vegas after 15 years managing sustainability programs at the venues where the industry's largest events happen — not from the outside looking in.</p>
+  </div>
+</div>
+
+<!-- FOUNDER -->
+<section class="founder">
+  <div class="founder-inner">
+    <div class="founder-aside reveal">
+      <div class="founder-badge">
+        <div class="founder-name">Ryan Green</div>
+        <div class="founder-title">Founder, Green Analytics</div>
+        <div class="founder-creds">
+          <div class="cred">LEED Accredited Professional (AP)</div>
+          <div class="cred">EIC Sustainable Event Professional Certificate</div>
+          <div class="cred">15+ years venue & sustainability operations</div>
+          <div class="cred">Las Vegas Convention Operations</div>
+          <div class="cred">Freeman (CES) · GES</div>
+          <div class="cred">Las Vegas, Nevada</div>
+        </div>
+      </div>
+    </div>
+    <div class="founder-body reveal">
+      <div class="section-label">The Founder</div>
+      <h2 class="section-title">Operational <em>Experience</em> at Scale</h2>
+      <p>Ryan Green began his career on the venue side, managing sustainability operations at one of the largest convention facilities in the world, in Las Vegas. He became Sustainable Events Manager in 2012 &mdash; a role he held for five years &mdash; running zero-waste programs for some of the industry&rsquo;s largest trade shows, including working directly with the IMEX America team through 2017.</p>
+      <p>He piloted the Banquet Donation Program at the Sands — rescuing over 400,000 meals from large events — which was subsequently replicated across the Las Vegas Strip with MGM Resorts, donating more than one million meals to Three Square Food Bank. The program earned a Community Hero Award.</p>
+      <p>That operational background informs everything about how Green Analytics is designed. The platform was built by someone who has sat at the intake desk, managed vendor coordination across million-square-foot convention floors, and understands exactly why previous sustainability frameworks failed to gain traction with working planners.</p>
+      <p><strong>The formative moment came in 2012</strong>, when ISO 20121, APEX/ASTM standards, and the USGBC Greenbuild Mandatory Exhibitor Greening Guidelines were released simultaneously while Ryan was at the Sands. The frameworks were real — but the measurement infrastructure to operationalize them didn't exist. Green Analytics is the infrastructure.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission">
+  <div class="mission-inner">
+    <div class="reveal">
+      <div class="section-label">The Mission</div>
+      <h2 class="section-title">Fix the <em>Measurement Problem.</em><br />Not the Industry.</h2>
+      <p style="font-size:0.95rem;color:var(--text-mid);max-width:680px;line-height:1.78;margin-bottom:24px">The global call for change says business events are incredibly damaging to the environment. And when every flight, every product, every supply chain impact is tallied and attributed to the event organizer &mdash; of course it looks that way. The current model holds planners responsible for emissions they don&rsquo;t own, asks them to reduce attendance travel that isn&rsquo;t theirs to control, and then calls it a sustainability program.</p>
+      <p style="font-size:0.95rem;color:var(--text-mid);max-width:680px;line-height:1.78;margin-bottom:24px">Events don&rsquo;t need to change. The reporting model does. It hasn&rsquo;t been meaningfully updated since the first sustainability guidance was introduced in the early 2000s. The frameworks are real &mdash; ISO 20121, EIC, NZCE &mdash; and the industry leaders who built them did extraordinary work. What was always missing was the connective reporting infrastructure to bring it all together and make it usable at scale.</p>
+      <p style="font-size:0.95rem;color:var(--text-mid);max-width:680px;line-height:1.78;">That is what Green Analytics provides. Not another consultant. Not another guide. Just better data, faster &mdash; the updated measurement model that finally makes all the other pieces line up.</p>
+    </div>
+    <div class="mission-grid" style="margin-top:48px">
+      <div class="mission-card reveal">
+        <h4>Data Management</h4>
+        <p>Vendor documents collected, categorized, and tracked across every scope item. No manual chasing, no lost invoices. A complete, timestamped record from intake to report.</p>
+      </div>
+      <div class="mission-card reveal" style="animation-delay:0.1s">
+        <h4>Analysis</h4>
+        <p>Every document converted into emissions data using verified calculation methodologies. Segment grades produced automatically. Coverage gaps disclosed transparently, not hidden.</p>
+      </div>
+      <div class="mission-card reveal" style="animation-delay:0.2s">
+        <h4>Verification</h4>
+        <p>Every figure traces to a source document. No estimates. No industry averages used to fill gaps. If it can&rsquo;t be verified, it&rsquo;s disclosed as limited coverage &mdash; not invented.</p>
+      </div>
+      <div class="mission-card reveal" style="animation-delay:0.3s">
+        <h4>Reporting</h4>
+        <p>Tiered disclosure packages for organizers, attendees, and exhibitors. Structured for corporate sustainability teams. Compatible with CDP, GRI, and CSRD requirements. Audit-ready.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRAMEWORKS -->
+<section class="frameworks">
+  <div class="frameworks-inner">
+    <div class="reveal">
+      <div class="section-label">The Foundation</div>
+      <h2 class="section-title">Three Standards.<br /><em>One System.</em></h2>
+      <p style="font-size:0.92rem;color:var(--text-mid);max-width:560px;line-height:1.75">Every claim in the GA methodology traces to one of three governing frameworks. No proprietary science — just the industry's own standards, applied consistently.</p>
+    </div>
+    <div class="frameworks-grid" style="grid-template-columns:repeat(3,1fr);max-width:900px">
+      <div class="framework-pill reveal">
+        <strong>Events Industry Council (EIC)</strong>
+        <p>The EIC defines what constitutes a business event and establishes the economic scope of each contracted space &mdash; who participates, what is contracted, and what falls within the official event boundary. It is the industry&rsquo;s authoritative standard for scoping professional events.</p>
+      </div>
+      <div class="framework-pill reveal" style="animation-delay:0.08s">
+        <strong>Net Zero Carbon Events (NZCE)</strong>
+        <p>The global industry roadmap for emissions reduction, developed by event industry leaders worldwide. NZCE identifies five priority action areas and establishes the directional standard: reduce emissions at the source first, use offsets only for the unavoidable residual.</p>
+      </div>
+      <div class="framework-pill reveal" style="animation-delay:0.16s">
+        <strong>LEED &mdash; US Green Building Council</strong>
+        <p>The world&rsquo;s most widely used green building rating system. LEED has established decades of precedent for how to document and verify built environment performance &mdash; energy consumption, materials tracking, supply chain reporting, and ASHRAE-level mechanical system detail.</p>
+      </div>
+    </div>
+    <p style="font-size:0.8rem;color:var(--text-muted);margin-top:24px;line-height:1.65;max-width:900px">GA reports are also structured for compatibility with GHG Protocol (Scope 3.6 Business Travel attribution), CDP, GRI, and CSRD corporate disclosure requirements &mdash; so attendee emissions are correctly attributed to the employer, and corporate sustainability teams can use all outputs directly without rework.</p>
+  </div>
+</section>
+
+<!-- FORMATIVE MOMENT -->
+<section class="formative">
+  <div class="formative-inner">
+    <div class="reveal">
+      <div class="section-label">Ten Years in the Making</div>
+      <h2 class="section-title">The Question That<br /><em>Started Everything</em></h2>
+    </div>
+
+    <div class="quote-block reveal">
+      <p>&ldquo;In 2012, ISO 20121, APEX/ASTM, and USGBC guidance all landed at once. The frameworks were real &mdash; and we implemented them as well as anyone could. But I would look out across that venue calendar and watch dozens of events cycle through the same space every month &mdash; and wonder why only a handful were even trying. Not because the guidance was wrong. Because something structural wasn&rsquo;t working.&rdquo;</p>
+      <cite>Ryan Green, Founder &mdash; Green Analytics</cite>
+    </div>
+
+    <p style="font-size:0.92rem;color:var(--text-mid);line-height:1.78;margin-bottom:20px" class="reveal">That question became a decade-long research mission. Not to build another program &mdash; but to understand why engagement was stuck at 3% despite an abundance of guidance, and why implementation was so complex that even the most committed planners struggled to sustain it year over year. Moving through every seat at the industry table &mdash; venue, non-profit planning team, exhibitor, contractor, national operations &mdash; the same three roadblocks appeared everywhere: cost, complexity, and a reporting model that hadn&rsquo;t been meaningfully updated since sustainability guidance was first introduced in the early 2000s.</p>
+
+    <p style="font-size:0.92rem;color:var(--text-mid);line-height:1.78;margin-bottom:20px" class="reveal">When the NZCE launched its global call for systemic change, the instinct of the 97% was understandable. The framing implied that events themselves were the problem &mdash; that flights needed to be reduced, that supply chains needed to be rebuilt, that planners needed to own and reduce every emission source in the full event footprint. For a profession already operating at capacity, that message landed as more burden, not more clarity.</p>
+
+    <p style="font-size:0.92rem;color:var(--text-mid);line-height:1.78;margin-bottom:40px" class="reveal">But the diagnosis was wrong. The industry wasn&rsquo;t broken. The measurement model was. Twenty years of guidance, from some of the most knowledgeable people in the business, had produced frameworks that were technically sound and practically unusable &mdash; because the connective reporting infrastructure that would make them work together had never been built. That is what Green Analytics is. Not a new consultant. Not a new guide. The reporting layer that finally makes all the existing pieces make sense.</p>
+
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap" class="reveal">
+      <a href="https://calendly.com/ryan-greenanalytics/30min" class="btn-primary">Book a Free Assessment Call</a>
+      <a href="https://webinar.greenanalytics.org" class="btn-ghost">Watch the Free Webinar</a>
+    </div>
+    <p style="font-size:0.78rem;color:var(--text-muted);text-align:center;margin-top:14px" class="reveal">The webinar includes a free copy of our ebook &mdash; sent directly to you after registration.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Green<em>Analytics</em></div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="references.html">References</a>
+    <a href="https://calendly.com/ryan-greenanalytics/30min">Book a Call</a>
+  </div>
+  <p class="footer-legal">© 2025 Green Analytics · Las Vegas, NV · Built on EIC Sustainable Event Standards, NZCE Roadmap, and GHG Protocol Scope 3.6</p>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, {threshold: 0.1});
+reveals.forEach(r => obs.observe(r));
+</script>
+</body>
+</html>
