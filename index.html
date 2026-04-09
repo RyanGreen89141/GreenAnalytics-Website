@@ -635,15 +635,7 @@ document.getElementById('webinarModal').addEventListener('click',e=>{if(e.target
 function init(){
   const msg=`Welcome. I know your schedule is full — I'll keep this focused and practical.\n\nTell me about your events. What types do you run, and how many per year? And if there's a specific reason sustainability came up on your radar recently, I'd love to hear that too.`;
   addMsg('agent',msg); history.push({role:'assistant',content:msg});
-}
 
-async function callClaude(txt){
-  history.push({role:'user',content:txt});
-  const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:SYS,messages:history})});
-  const d=await r.json();
-  const reply=d.content?.[0]?.text||'I apologize — please try again.';
-  history.push({role:'assistant',content:reply});
-  return reply;
 }
 
 function addMsg(role,text){
