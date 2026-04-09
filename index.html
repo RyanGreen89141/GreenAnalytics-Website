@@ -706,26 +706,6 @@ async function send(){
 }
 
 function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send();}}
-
-async function submitEmail(){
-  const first=document.getElementById('firstName').value.trim();
-  const email=document.getElementById('emailInput').value.trim();
-  const org=document.getElementById('orgName').value.trim();
-  if(!email||!email.includes('@')){alert('Please enter a valid email address.');return;}
-  
-  // Create HubSpot contact via API
-  try{
-    await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        model:'claude-sonnet-4-20250514',
-        max_tokens:200,
-        system:'You are a HubSpot data capture assistant. When given contact details, confirm receipt with a brief JSON acknowledgment.',
-        messages:[{role:'user',content:`New GA lead captured: Name: ${first}, Email: ${email}, Org: ${org}, Source: Website email form, Date: ${new Date().toISOString()}`}]
-      })
-    });
-  }catch(e){console.log('API call attempted');}
   
   // Show success state regardless - HubSpot webhook handles the actual delivery
   document.getElementById('emailForm').classList.add('hidden');
