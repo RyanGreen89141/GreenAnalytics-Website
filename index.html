@@ -668,12 +668,6 @@ async function send(){
 }
 
 function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send();}}
-
-async function submitEmail(){
-  const first=document.getElementById('firstName').value.trim();
-  const email=document.getElementById('emailInput').value.trim();
-  const org=document.getElementById('orgName').value.trim();
-  if(!email||!email.includes('@')){alert('Please enter a valid email address.');return;}
   
   // Create HubSpot contact via API
   try{
