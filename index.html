@@ -510,29 +510,20 @@ footer{position:relative;z-index:1;background:var(--navy2);border-top:1px solid 
           <div class="email-capture-sub">Ebook + EIC Space Inventory Tool delivered immediately.</div>
         </div>
         <div class="email-capture-form" id="emailForm">
-          <div class="form-field">
-            <label>First name</label>
-            <input type="text" id="firstName" placeholder="Your first name">
-          </div>
-          <div class="form-field">
-            <label>Email address</label>
-            <input type="email" id="emailInput" placeholder="you@yourorganization.com">
-          </div>
-          <div class="form-field">
-            <label>Organization</label>
-            <input type="text" id="orgName" placeholder="Your organization or company">
-          </div>
-          <button class="btn-primary" style="width:100%;justify-content:center;margin-top:8px;" onclick="submitEmail()">
-            Send Me the Free Resources →
-          </button>
-          <p class="form-note">No invoice. No commitment. Complete the worksheet and email it to <strong>Reporting@GreenAnalytics.org</strong> when ready.</p>
-        </div>
-        <div class="email-capture-success hidden" id="emailSuccess">
-          <div class="success-icon">✅</div>
-          <div class="success-title">On its way.</div>
-          <div class="success-body">Check your inbox for the ebook and EIC Space Inventory Tool. When you've completed the worksheet, email it to <strong>Reporting@GreenAnalytics.org</strong> and someone from our team will be in touch.</div>
-          <div class="success-contact">Questions? <a href="mailto:Reporting@GreenAnalytics.org">Reporting@GreenAnalytics.org</a> · 702-773-6350</div>
-        </div>
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+  <script>
+    hbspt.forms.create({
+      region: "na2",
+      portalId: "41htjw",
+      formId: "29z00GNmaS027RuKzPfVUDw",
+      target: "#emailForm",
+      onFormSubmitted: function() {
+        document.getElementById('emailForm').classList.add('hidden');
+        document.getElementById('emailSuccess').classList.remove('hidden');
+      }
+    });
+  </script>
+</div>
       </div>
       <div class="chat-available">
         <span>Have questions about the program?</span>
