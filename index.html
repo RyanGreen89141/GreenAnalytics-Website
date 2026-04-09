@@ -707,10 +707,6 @@ async function send(){
 
 function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send();}}
   
-  // Show success state regardless - HubSpot webhook handles the actual delivery
-  document.getElementById('emailForm').classList.add('hidden');
-  document.getElementById('emailSuccess').classList.remove('hidden');
-}
 function resize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,100)+'px';}
 
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});
